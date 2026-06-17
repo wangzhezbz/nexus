@@ -1,0 +1,20 @@
+{
+  "name": "@nexus/ui",
+  "version": "0.1.0",
+  "description": "山海有灵聚合平台 · 统一设计系统（科技风主题 + 组件 + Tailwind 预设）",
+  "exports": {
+    ".": "./src/index.ts",
+    "./globals.css": "./src/globals.css",
+    "./tailwind-preset": "./tailwind-preset.js"
+  },
+  "files": ["src", "tailwind-preset.js"],
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.6"
+  }
+}
