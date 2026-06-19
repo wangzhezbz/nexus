@@ -17,7 +17,7 @@ export function AdminShell({ product, nav = [], user = null, onLogout, activeId,
   return (
     <div className="flex min-h-screen">
       <aside className="flex w-56 flex-col border-r border-[var(--line)] bg-[rgba(8,13,26,0.6)] p-5">
-        <div className="mb-1 font-display tracking-widest text-white">山海有灵</div>
+        <div className="mb-1 font-display tracking-widest text-white">山海AI</div>
         <div className="mb-6 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--muted-dim)]">
           {product} · 后台
         </div>

@@ -24,7 +24,7 @@ type Props = {
 
 export function AppShell({
   product, nav = PLATFORM_NAV, user = null, onLogout,
-  brand = "山海有灵", children,
+  brand = "山海AI", children,
 }: Props) {
   return (
     <div className="min-h-screen">

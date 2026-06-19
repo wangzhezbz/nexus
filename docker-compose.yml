@@ -1,0 +1,36 @@
+# 山海AI 平台 · 中央认证部署
+# 服务器上：cp .env.example .env 填好密码，docker compose up -d
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: authdb
+      MYSQL_USER: auth
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - auth-mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  auth-service:
+    build: ./auth-service
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      COOKIE_DOMAIN: ${COOKIE_DOMAIN}
+      COOKIE_SECURE: ${COOKIE_SECURE}
+      DATABASE_URL: ${DATABASE_URL}
+      CORS_ORIGINS: ${CORS_ORIGINS}
+    ports:
+      - "127.0.0.1:5100:5100"   # 由 nginx 反代到 /auth/
+
+volumes:
+  auth-mysql:
