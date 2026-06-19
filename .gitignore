@@ -1,0 +1,12 @@
+# 密钥/环境，绝不上传
+.env
+*.env.local
+# 依赖与构建产物
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+instance/
