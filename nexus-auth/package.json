@@ -1,0 +1,14 @@
+{
+  "name": "@nexus/auth",
+  "version": "0.1.0",
+  "description": "山海平台 · 单点登录客户端（对接中央 auth-service）",
+  "exports": { ".": "./src/index.ts" },
+  "files": ["src"],
+  "peerDependencies": {
+    "react": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "typescript": "^5.6"
+  }
+}
