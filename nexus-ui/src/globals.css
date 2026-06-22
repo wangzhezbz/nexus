@@ -23,8 +23,9 @@
   --rose: #c0473b;
   --seal: #c0473b;
   --text: #ece9e3;
-  --muted: #9a9d98;
-  --muted-dim: #6a6e69;
+  /* 提高对比度：旧值 #9a9d98 / #6a6e69 在 #0e1216 深底上偏暗、看不清 */
+  --muted: #b9bcb5;
+  --muted-dim: #909489;
   color-scheme: dark;
 }
 
