@@ -24,8 +24,8 @@
   --seal: #c0473b;
   --text: #ece9e3;
   /* 提高对比度：旧值 #9a9d98 / #6a6e69 在 #0e1216 深底上偏暗、看不清 */
-  --muted: #b9bcb5;
-  --muted-dim: #909489;
+  --muted: #c6c8c1;
+  --muted-dim: #a2a69c;
   color-scheme: dark;
 }
 
@@ -100,7 +100,10 @@ html::before {
 
 /* ===== 面板：极简，发丝描边 + 墨色软阴影，无彩虹边 ===== */
 .glass {
-  background: var(--panel);
+  /* 深色磨砂底：让卡片文字稳定压在深底上，不再漂在会动的水墨背景上 */
+  background: rgba(13, 17, 21, 0.72);
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
   border: 1px solid var(--line);
   border-radius: 14px;
   box-shadow: 0 20px 50px -36px rgba(0,0,0,0.9);
