@@ -15,7 +15,8 @@ const H = "127.0.0.1";
 
 // [匹配前缀, 目标端口, 要剥掉的前缀(null=不剥)]
 const ROUTES = [
-  ["/auth", 5100, null],
+  ["/auth/api", 5100, null],              // 中央 SSO 接口 -> auth-service
+  ["/auth", 3001, null],                  // 中央登录/注册页面 -> 门户提供
   ["/v1", 5000, null],
   ["/api-relay/api", 5000, "/api-relay"], // /api-relay/api/me -> 后端 /api/me
   ["/api-relay", 3000, null],             // Next basePath=/api-relay，路径原样
