@@ -1,3 +1,6 @@
+/* 自托管字体（@font-face）。必须在最前，postcss-import 才会处理。 */
+@import "./fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,6 +29,12 @@
   /* 提高对比度：旧值 #9a9d98 / #6a6e69 在 #0e1216 深底上偏暗、看不清 */
   --muted: #c6c8c1;
   --muted-dim: #a2a69c;
+  /* 字体：由 @nexus/ui 自托管（见 fonts.css），各产品不再用 next/font/google。
+     退化链都给了系统字体，离线/缺字时不至于丢版式。 */
+  --font-display: "Orbitron", system-ui, -apple-system, sans-serif;
+  --font-head: "Rajdhani", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+  --font-brush: "Ma Shan Zheng", "KaiTi", "STKaiti", var(--font-display), serif;
   color-scheme: dark;
 }
 

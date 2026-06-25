@@ -1,12 +1,9 @@
 import "@nexus/ui/globals.css";
 import type { Metadata } from "next";
-import { Orbitron, Rajdhani, JetBrains_Mono, Ma_Shan_Zheng } from "next/font/google";
 import { Topo, Spotlight, ToastProvider } from "@nexus/ui";
 
-const display = Orbitron({ subsets: ["latin"], weight: ["500", "700", "900"], variable: "--font-display", display: "swap" });
-const head = Rajdhani({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-head", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-mono", display: "swap" });
-const brush = Ma_Shan_Zheng({ subsets: ["latin"], weight: ["400"], variable: "--font-brush", display: "swap" });
+// 字体由 @nexus/ui 自托管（globals.css 的 @font-face + :root --font-*），
+// 不再用 next/font/google，离线/国内可构建、全平台统一。
 
 export const metadata: Metadata = {
   title: "山海AI · 聚合平台",
@@ -15,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN" className={`${display.variable} ${head.variable} ${mono.variable} ${brush.variable}`}>
+    <html lang="zh-CN">
       <body>
         <Topo />
         <Spotlight />
